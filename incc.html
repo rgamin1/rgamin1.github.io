@@ -21,7 +21,6 @@
         function calculate(){
             //alert("FN " + document.getElementById('first_number').value);
             //alert("SN " + document.getElementById('secco_number').value);
-
             var fn = document.getElementById('first_number').value;
             var sn = document.getElementById('secco_number').value;
 
@@ -30,6 +29,16 @@
             var tot1 = tot * 100;
 
             //alert("Total: " + tot1);
+            var tot2;
+
+            if (document.getElementById('checkb').value = "on")
+            {
+                tot2 = Math.round(tot1);
+                tot1 = tot2;
+            } else 
+            {
+
+            }
             document.getElementById('total').innerHTML = "Total: " + tot1;
         }
     </script>
@@ -41,7 +50,7 @@
 <label for="secco_number">Second Number</label>
 <input id="secco_number">
 <br>
-<label for="checkb">Round to nearest tenth?</label>
+<label for="checkb">Round to nearest int? (.9 turns into 1)</label>
 <input type="checkbox" id="checkb">
 <br>    
 <button onclick="check();" pattern="[0-9]">Calculate</button>
