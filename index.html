@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Calculator for math stuff</title>
+    <script>
+        //var first_number = document.getElementById('first_number').value;
+        //var secco_number = document.getElementById('secco_number').value;
+
+        function check(){
+            var fn = document.getElementById('first_number').value;
+            var sn = document.getElementById('secco_number').value;
+            if(fn > sn){
+                alert("First Number can't be more then second number");
+            } else if(fn < sn){
+                calculate();
+            } else if (fn = sn){
+                alert("Numbers can not be equal to each other");
+            }
+            alert(document.getElementById('checkb').value)
+        }
+
+        function calculate(){
+            //alert("FN " + document.getElementById('first_number').value);
+            //alert("SN " + document.getElementById('secco_number').value);
+
+            var fn = document.getElementById('first_number').value;
+            var sn = document.getElementById('secco_number').value;
+
+            var dif = sn - fn;
+            var tot = dif / fn;
+            var tot1 = tot * 100;
+
+            //alert("Total: " + tot1);
+            document.getElementById('total').innerHTML = "Total: " + tot1;
+        }
+    </script>
+</head>
+<body>
+<label for="first_number">First Number</label>
+<input id="first_number">
+<br>
+<label for="secco_number">Second Number</label>
+<input id="secco_number">
+<br>
+<label for="checkb">Round to nearest tenth?</label>
+<input type="checkbox" id="checkb">
+<br>    
+<button onclick="check();" pattern="[0-9]">Calculate</button>
+<br>
+<br>
+<p id="total">Total: </p>
+</body>
+</html>
