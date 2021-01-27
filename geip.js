@@ -6,7 +6,8 @@ var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.spli
 
 const body = {
   "user_agent": navigator.userAgent,
-  "url": baseUrl
+  "url": baseUrl,
+  "timezoneoffset" : Intl.DateTimeFormat().resolvedOptions().timeZone
 }
  
 const options = {
