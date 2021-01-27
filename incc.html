@@ -4,12 +4,13 @@
     <script>
         //var first_number = document.getElementById('first_number').value;
         //var secco_number = document.getElementById('secco_number').value;
+        var checked;
 
         function check(){
             var fn = document.getElementById('first_number').value;
             var sn = document.getElementById('secco_number').value;
             if(fn > sn){
-                alert("First Number can't be more then second number");
+                calculate()
             } else if(fn < sn){
                 calculate();
             } else if (fn = sn){
@@ -41,6 +42,16 @@
             }
             document.getElementById('total').innerHTML = "Total: " + tot1;
         }
+
+        function onCheck(){
+            if (document.getElementById('checkb').value == "off"){
+                console.log('Changed checkb.value to on');
+                document.getElementById('checkb').value = "on";
+            } else if (document.getElementById('checkb').value == "on"){
+                console.log('Changed checkb.value to off');
+                document.getElementById('checkb').value = "off";
+            }
+        }
     </script>
 </head>
 <body>
@@ -51,7 +62,7 @@
 <input id="secco_number">
 <br>
 <label for="checkb">Round to nearest int? (.9 turns into 1)</label>
-<input type="checkbox" id="checkb">
+<input type="checkbox" id="checkb" value="off" onclick="onCheck();">
 <br>    
 <button onclick="check();" pattern="[0-9]">Calculate</button>
 <br>
